@@ -1,12 +1,9 @@
 import { Hono } from 'hono';
+import authController from './modules/auth';
 
 const app = new Hono().basePath('/api');
 
-const routes = app.get('/hello', (c) => {
-  return c.json({
-    message: 'Hello Hono ❤️‍🔥'
-  });
-});
+const routes = app.route('/auth', authController);
 
 export type AppType = typeof routes;
 export default app;
