@@ -1,10 +1,10 @@
-import { createAuthClient } from "better-auth/react";
+import { createAuthClient } from 'better-auth/react';
 
 export const authClient = createAuthClient({
-    baseURL: process.env.NEXT_PUBLIC_API_URL as string,
-    fetchOptions: {
-        onError: (ctx) => {
-            console.log(ctx.error.message)
-        }
+  baseURL: process.env.NEXT_PUBLIC_API_URL as string,
+  fetchOptions: {
+    onError: (ctx) => {
+      console.log(ctx.error.message);
     }
-})
+  }
+});
